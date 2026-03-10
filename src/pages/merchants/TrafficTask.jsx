@@ -1181,6 +1181,8 @@ export default function TrafficTask() {
     queryFn: async () => {
       const p = new URLSearchParams({ page, limit });
       if (activeFilters.status) p.set("status", activeFilters.status);
+      if (activeFilters.merchantId)
+        p.set("merchantId", activeFilters.merchantId);
       const { data } = await API.get(`/traffic-tasks?${p.toString()}`);
       return data;
     },
@@ -1260,8 +1262,16 @@ export default function TrafficTask() {
   });
 
   // ── Handlers ───────────────────────────────────────────────
+  // const handleSearch = () => {
+  //   setActiveFilters({ status: statusInput });
+  //   setPage(1);
+  // };
+
   const handleSearch = () => {
-    setActiveFilters({ status: statusInput });
+    setActiveFilters({
+      status: statusInput,
+      merchantId: merchantNameInput, // backend supports this
+    });
     setPage(1);
   };
 

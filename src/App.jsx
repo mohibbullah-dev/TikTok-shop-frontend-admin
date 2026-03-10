@@ -1,3 +1,4 @@
+////////////////////// ================= lates version ====================== //////////////////////
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import AdminLayout from "./components/layout/AdminLayout";
@@ -17,7 +18,7 @@ import Recharges from "./pages/merchants/Recharges";
 import Withdrawals from "./pages/merchants/Withdrawals";
 import TrafficTask from "./pages/merchants/TrafficTask";
 import OrderList from "./pages/orders/OrderList";
-import RefundOrders from "./pages/orders/RefundOrders"; // <-- IMPORTED HERE
+import RefundOrders from "./pages/orders/RefundOrders";
 import Complaints from "./pages/merchants/Complaints";
 import AdminChat from "./pages/chat/AdminChat";
 import AttendanceRecords from "./pages/merchants/AttendanceRecords";
@@ -25,6 +26,7 @@ import SystemSettings from "./pages/general/SystemSettings";
 import AdminManagement from "./pages/general/AdminManagement";
 import ProductPool from "./pages/general/ProductPool";
 import TeamTree from "./pages/general/TeamTree";
+import DispatchOrders from "./pages/orders/DispatchOrders";
 
 // Role-based route guard
 const ProtectedRoute = ({ children, allowedRoles }) => {
@@ -54,6 +56,7 @@ export default function App() {
         element={token ? <Navigate to="/" replace /> : <Login />}
       />
 
+      {/* ✅ ALL routes inside AdminLayout so sidebar/topbar always render */}
       <Route
         path="/"
         element={
@@ -64,8 +67,36 @@ export default function App() {
       >
         {/* Dashboard */}
         <Route index element={<Dashboard />} />
+        <Route path="orders/dispatch" element={<DispatchOrders />} />
+
         {/* General */}
         <Route path="profile" element={<Profile />} />
+
+        {/* ✅ FIX BUG 7: Moved inside AdminLayout (were outside before) */}
+        <Route
+          path="admin-management"
+          element={
+            <ProtectedRoute allowedRoles={["superAdmin"]}>
+              <AdminManagement />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="product-pool"
+          element={
+            <ProtectedRoute allowedRoles={["superAdmin", "dispatchAdmin"]}>
+              <ProductPool />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="team"
+          element={
+            <ProtectedRoute allowedRoles={["superAdmin", "merchantAdmin"]}>
+              <TeamTree />
+            </ProtectedRoute>
+          }
+        />
 
         {/* Merchant Management */}
         <Route
@@ -159,8 +190,6 @@ export default function App() {
 
         {/* Orders */}
         <Route path="orders" element={<OrderList />} />
-
-        {/* 👇 NEW REFUND ORDERS ROUTE PLACED HERE 👇 */}
         <Route
           path="refund-orders"
           element={
@@ -170,7 +199,7 @@ export default function App() {
           }
         />
 
-        {/* Add this inside the AdminLayout Routes */}
+        {/* Attendance */}
         <Route
           path="attendance-records"
           element={
@@ -190,7 +219,7 @@ export default function App() {
           }
         />
 
-        {/* seetings  */}
+        {/* Settings */}
         <Route
           path="settings"
           element={
@@ -200,32 +229,6 @@ export default function App() {
           }
         />
       </Route>
-      {/* admin-management  */}
-      <Route
-        path="admin-management"
-        element={
-          <ProtectedRoute allowedRoles={["superAdmin"]}>
-            <AdminManagement />
-          </ProtectedRoute>
-        }
-      />
-
-      <Route
-        path="product-pool"
-        element={
-          <ProtectedRoute allowedRoles={["superAdmin", "dispatchAdmin"]}>
-            <ProductPool />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="team"
-        element={
-          <ProtectedRoute allowedRoles={["superAdmin", "merchantAdmin"]}>
-            <TeamTree />
-          </ProtectedRoute>
-        }
-      />
 
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

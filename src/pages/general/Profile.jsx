@@ -488,7 +488,7 @@ export default function Profile() {
   // ── Mutations ───────────────────────────────────────────────
   const updateProfile = useMutation({
     mutationFn: async (data) => {
-      const res = await API.put("/api/auth/update-profile", data);
+      const res = await API.put("/auth/update-profile", data);
       return res.data;
     },
     onSuccess: (data) => {

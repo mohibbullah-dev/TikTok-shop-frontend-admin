@@ -117,8 +117,8 @@ export default function TeamTree() {
             style={{ padding: "16px 20px" }}
             className="text-right text-[12px] font-medium text-gray-500"
           >
-            {node.createdAt
-              ? new Date(node.createdAt).toLocaleDateString()
+            {node.user?.createdAt
+              ? new Date(node.user.createdAt).toLocaleDateString()
               : "—"}
           </td>
         </tr>

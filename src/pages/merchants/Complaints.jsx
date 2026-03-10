@@ -766,7 +766,7 @@ const STATUS_MAP = {
 export default function Complaints() {
   const queryClient = useQueryClient();
   const { user } = useSelector((s) => s.auth);
-
+  const isSuperAdmin = user?.role === "superAdmin";
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(10);
 

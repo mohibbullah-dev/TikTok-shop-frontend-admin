@@ -1284,7 +1284,10 @@ export default function Showcase() {
       >
         {sel && (
           <div className="space-y-4">
-            <div className="flex gap-4 p-4 border border-gray-200 rounded-sm bg-white shadow-sm">
+            <div
+              style={{ padding: "16px" }}
+              className="flex gap-4 p-4 border border-gray-200 rounded-sm bg-white shadow-sm"
+            >
               <div className="w-24 h-24 bg-gray-100 rounded-sm overflow-hidden flex-shrink-0 border border-gray-200">
                 {sel.image ? (
                   <img
@@ -1307,7 +1310,10 @@ export default function Showcase() {
                     </span>
                   )}
                   {sel.isDistribution && (
-                    <span className="bg-blue-100 text-blue-700 text-[10px] font-bold px-2 py-0.5 rounded-sm">
+                    <span
+                      style={{ padding: "6px", marginTop: "4px" }}
+                      className="bg-blue-100 text-blue-700 text-[10px] font-bold px-2 py-0.5 rounded-sm"
+                    >
                       Platform Distribution
                     </span>
                   )}
@@ -1315,7 +1321,10 @@ export default function Showcase() {
               </div>
             </div>
 
-            <div className="bg-white rounded-sm border border-gray-200 p-2 shadow-sm">
+            <div
+              style={{ padding: "5px" }}
+              className="bg-white rounded-sm border border-gray-200 p-2 shadow-sm"
+            >
               <Field
                 label="Merchant"
                 value={sel.merchant?.storeName || "Platform Global"}
@@ -1351,7 +1360,7 @@ export default function Showcase() {
               />
             </div>
 
-            <div className="grid grid-cols-2 gap-3">
+            <div style={{ padding: "5px" }} className="grid grid-cols-2 gap-3">
               <div className="p-3 bg-gray-50 border border-gray-200 rounded-sm">
                 <p className="text-[11px] text-gray-500 font-bold uppercase tracking-wider">
                   Total Sales
