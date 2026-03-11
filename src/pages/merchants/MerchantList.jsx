@@ -421,7 +421,7 @@ export default function MerchantList() {
             <tbody>
               {isLoading ? (
                 <tr>
-                  <td colSpan="8" className="py-24">
+                  <td colSpan="9" className="py-24">
                     <div className="flex flex-col items-center justify-center gap-3">
                       <Loader2 className="w-8 h-8 text-teal-500 animate-spin" />
                       <p className="text-gray-500 text-[13px] font-medium">
