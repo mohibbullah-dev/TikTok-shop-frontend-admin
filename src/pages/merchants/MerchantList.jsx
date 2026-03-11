@@ -408,14 +408,24 @@ export default function MerchantList() {
                 <th className="py-4 px-5 text-center w-10">
                   <input type="checkbox" className="rounded border-gray-300" />
                 </th>
-                <th className="py-4 px-5 font-bold">Merchant ID</th>
-                <th className="py-4 px-5 font-bold">Merchant Name</th>
+                <th className="py-4 px-0 font-bold">Merchant ID</th>
+                <th className="py-4 px-0 font-bold">Merchant Name</th>
                 <th className="py-4 px-5 font-bold">Merchant Level</th>
                 <th className="py-4 px-5 font-bold text-center">Logo</th>
                 <th className="py-4 px-5 font-bold text-center">Status</th>
                 <th className="py-4 px-5 font-bold">Referrer</th>
-                <th className="py-4 px-5 font-bold">Creation Time</th>
-                <th className="py-4 px-5 font-bold text-center">Operations</th>
+                <th
+                  style={{ marginLeft: "10px", marginRight: "10px" }}
+                  className="py-4 px-5 font-bold"
+                >
+                  Creation Time
+                </th>
+                <th
+                  style={{ marginLeft: "10px", marginRight: "10px" }}
+                  className="py-4 px-5 font-bold text-center"
+                >
+                  Operations
+                </th>
               </tr>
             </thead>
             <tbody>
