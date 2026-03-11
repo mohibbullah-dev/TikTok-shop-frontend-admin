@@ -414,18 +414,8 @@ export default function MerchantList() {
                 <th className="py-4 px-5 font-bold text-center">Logo</th>
                 <th className="py-4 px-5 font-bold text-center">Status</th>
                 <th className="py-4 px-5 font-bold">Referrer</th>
-                <th
-                  style={{ marginLeft: "10px", marginRight: "10px" }}
-                  className="py-4 px-5 font-bold"
-                >
-                  Creation Time
-                </th>
-                <th
-                  style={{ marginLeft: "10px", marginRight: "10px" }}
-                  className="py-4 px-5 font-bold text-center"
-                >
-                  Operations
-                </th>
+                <th className="py-4 px-5 font-bold">Creation Time</th>
+                <th className="py-4 px-5 font-bold text-center">Operations</th>
               </tr>
             </thead>
             <tbody>
