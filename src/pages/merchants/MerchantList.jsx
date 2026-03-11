@@ -418,6 +418,7 @@ export default function MerchantList() {
                   Merchant ID
                 </th>
                 <th className="py-4 px-5 font-bold">Merchant Name</th>
+                <th className="py-4 px-5 font-bold">Merchant Level</th>
                 <th className="py-4 px-5 font-bold text-center">Logo</th>
                 <th className="py-4 px-5 font-bold text-center">Status</th>
                 <th className="py-4 px-5 font-bold">Referrer</th>
