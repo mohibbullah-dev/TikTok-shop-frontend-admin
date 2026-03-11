@@ -405,31 +405,31 @@ export default function MerchantList() {
           <table className="w-full text-left border-collapse min-w-[1600px]">
             <thead>
               <tr className="border-b border-gray-100 text-gray-500 text-[12px] uppercase tracking-wider bg-gray-50/50">
-                <th className="py-4 px-6 text-center w-14">
+                <th className="py-3 px-5 text-center w-10">
                   <input type="checkbox" className="rounded border-gray-300" />
                 </th>
-                <th className="py-4 px-6 font-bold whitespace-nowrap">
+                <th className="py-3 px-5 font-bold whitespace-nowrap">
                   Merchant ID
                 </th>
-                <th className="py-4 px-6 font-bold whitespace-nowrap">
+                <th className="py-3 px-5 font-bold whitespace-nowrap">
                   Merchant Name
                 </th>
-                <th className="py-4 px-6 font-bold whitespace-nowrap">
+                <th className="py-3 px-5 font-bold whitespace-nowrap">
                   Merchant Level
                 </th>
-                <th className="py-4 px-6 font-bold text-center whitespace-nowrap">
+                <th className="py-3 px-5 font-bold text-center whitespace-nowrap">
                   Logo
                 </th>
-                <th className="py-4 px-6 font-bold text-center whitespace-nowrap">
+                <th className="py-3 px-5 font-bold text-center whitespace-nowrap">
                   Status
                 </th>
-                <th className="py-4 px-6 font-bold whitespace-nowrap">
+                <th className="py-3 px-5 font-bold whitespace-nowrap">
                   Referrer
                 </th>
-                <th className="py-4 px-6 font-bold whitespace-nowrap">
+                <th className="py-3 px-5 font-bold whitespace-nowrap">
                   Creation Time
                 </th>
-                <th className="py-4 px-6 font-bold text-center min-w-[320px]">
+                <th className="py-3 px-5 font-bold min-w-[400px]">
                   Operations
                 </th>
               </tr>
@@ -461,22 +461,22 @@ export default function MerchantList() {
                     key={m._id}
                     className="border-b border-gray-50 hover:bg-teal-50/30 transition-colors group"
                   >
-                    <td className="py-4 px-6 text-center">
+                    <td className="py-3 px-5 text-center">
                       <input
                         type="checkbox"
                         className="rounded border-gray-300"
                       />
                     </td>
-                    <td className="py-4 px-6 text-[13px] text-gray-600 font-medium whitespace-nowrap">
+                    <td className="py-3 px-5 text-[13px] text-gray-600 font-medium whitespace-nowrap">
                       {m.merchantId}
                     </td>
-                    <td className="py-4 px-6 text-[13px] text-gray-900 font-bold whitespace-nowrap">
+                    <td className="py-3 px-5 text-[13px] text-gray-900 font-bold whitespace-nowrap">
                       {m.storeName}
                     </td>
-                    <td className="py-4 px-6 text-[13px] text-gray-900 font-bold whitespace-nowrap">
+                    <td className="py-3 px-5 text-[13px] text-gray-900 font-bold whitespace-nowrap">
                       {m.vipLevel}
                     </td>
-                    <td className="py-4 px-6">
+                    <td className="py-3 px-5">
                       <div className="w-9 h-9 rounded-sm mx-auto overflow-hidden bg-gray-50 flex items-center justify-center border border-gray-200">
                         {m.storeLogo ? (
                           <img
@@ -491,9 +491,9 @@ export default function MerchantList() {
                         )}
                       </div>
                     </td>
-                    <td className="py-4 px-6 text-center whitespace-nowrap">
+                    <td className="py-3 px-5 text-center whitespace-nowrap">
                       <span
-                        className={`text-[12px] px-3 py-1.5 rounded-sm font-bold ${m.status === "approved" ? "bg-emerald-100 text-emerald-700" : m.status === "pending" ? "bg-yellow-100 text-yellow-700" : m.status === "frozen" ? "bg-blue-100 text-blue-700" : "bg-red-100 text-red-700"}`}
+                        className={`text-[12px] px-3 py-1 rounded-sm font-bold ${m.status === "approved" ? "bg-emerald-100 text-emerald-700" : m.status === "pending" ? "bg-yellow-100 text-yellow-700" : m.status === "frozen" ? "bg-blue-100 text-blue-700" : "bg-red-100 text-red-700"}`}
                       >
                         {m.status === "approved"
                           ? "Active"
@@ -504,18 +504,19 @@ export default function MerchantList() {
                               : "Rejected"}
                       </span>
                     </td>
-                    <td className="py-4 px-6 text-[13px] text-gray-600 whitespace-nowrap">
+                    <td className="py-3 px-5 text-[13px] text-gray-600 whitespace-nowrap">
                       {m.referrer?.username || "Direct"}
                     </td>
-                    <td className="py-4 px-6 text-[13px] text-gray-500 whitespace-nowrap">
+                    <td className="py-3 px-5 text-[13px] text-gray-500 whitespace-nowrap">
                       <span className="text-gray-800 font-medium">
                         {new Date(m.createdAt).toLocaleDateString("en-CA")}
                       </span>
                       <br />
                       {new Date(m.createdAt).toLocaleTimeString()}
                     </td>
-                    <td className="py-4 px-6">
-                      <div className="grid grid-cols-2 gap-2 w-max mx-auto">
+                    <td className="py-3 px-5">
+                      {/* ✅ UI FIX: Restored the wrapping flexbox so buttons spread horizontally without forcing huge row heights! */}
+                      <div className="flex flex-wrap items-center justify-start gap-2 w-full">
                         <ActionBtn
                           color="#059669"
                           label="Details"
