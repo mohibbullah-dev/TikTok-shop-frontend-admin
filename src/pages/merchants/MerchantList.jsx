@@ -461,10 +461,10 @@ export default function MerchantList() {
                     className="border-b border-gray-50 hover:bg-teal-50/30 transition-colors group"
                   >
                     <td className="py-3 px-6 text-center">
-                      <input
+                      {/* <input
                         type="checkbox"
                         className="rounded border-gray-300"
-                      />
+                      /> */}
                     </td>
                     <td className="py-3 px-8 text-[13px] text-gray-600 font-medium whitespace-nowrap">
                       {m.merchantId}
