@@ -464,6 +464,9 @@ export default function MerchantList() {
                     <td className="py-3 px-5 text-[13px] text-gray-900 font-bold">
                       {m.storeName}
                     </td>
+                    <td className="py-3 px-5 text-[13px] text-gray-900 font-bold">
+                      {m.storeName}
+                    </td>
                     <td className="py-3 px-5">
                       <div className="w-9 h-9 rounded-sm mx-auto overflow-hidden bg-gray-50 flex items-center justify-center border border-gray-200">
                         {m.storeLogo ? (
@@ -496,6 +499,10 @@ export default function MerchantList() {
                     <td className="py-3 px-5 text-[13px] text-gray-600">
                       {m.referrer?.username || "Direct"}
                     </td>
+                    <td className="py-3 px-5 text-[13px] text-gray-600">
+                      {m.referrer?.username || "Direct"}
+                    </td>
+
                     <td className="py-3 px-5 text-[13px] text-gray-500">
                       <span className="text-gray-800 font-medium">
                         {new Date(m.createdAt).toLocaleDateString("en-CA")}
