@@ -405,7 +405,7 @@ export default function MerchantList() {
             <thead>
               <tr className="border-b border-gray-100 text-gray-500 text-[12px] uppercase tracking-wider bg-gray-50/50">
                 <th className="py-3 px-6 text-center w-12">
-                  <input type="checkbox" className="rounded border-gray-300" />
+                  {/* <input type="checkbox" className="rounded border-gray-300" /> */}
                 </th>
                 <th className="py-3 px-8 font-bold whitespace-nowrap min-w-[150px]">
                   Merchant ID
