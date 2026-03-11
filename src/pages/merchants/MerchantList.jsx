@@ -465,7 +465,7 @@ export default function MerchantList() {
                       {m.storeName}
                     </td>
                     <td className="py-3 px-5 text-[13px] text-gray-900 font-bold">
-                      {m.storeName}
+                      {m.vipLevel}
                     </td>
                     <td className="py-3 px-5">
                       <div className="w-9 h-9 rounded-sm mx-auto overflow-hidden bg-gray-50 flex items-center justify-center border border-gray-200">
