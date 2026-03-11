@@ -405,18 +405,10 @@ export default function MerchantList() {
           <table className="w-full text-left border-collapse min-w-[1400px]">
             <thead>
               <tr className="border-b border-gray-100 text-gray-500 text-[12px] uppercase tracking-wider bg-gray-50/50">
-                <th
-                  style={{ padding: "5px" }}
-                  className="py-4 px-5 text-center w-10"
-                >
+                <th className="py-4 px-5 text-center w-10">
                   <input type="checkbox" className="rounded border-gray-300" />
                 </th>
-                <th
-                  style={{ paddingLeft: "20px" }}
-                  className="py-4 px-5 font-bold"
-                >
-                  Merchant ID
-                </th>
+                <th className="py-4 px-5 font-bold">Merchant ID</th>
                 <th className="py-4 px-5 font-bold">Merchant Name</th>
                 <th className="py-4 px-5 font-bold">Merchant Level</th>
                 <th className="py-4 px-5 font-bold text-center">Logo</th>
