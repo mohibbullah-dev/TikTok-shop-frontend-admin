@@ -740,6 +740,7 @@ export default function MerchantList() {
 
       {/* ════════ MODALS ════════ */}
       {/* 1. Detail Modal */}
+      {/* 1. Detail Modal */}
       <Modal
         open={modal === "detail"}
         onClose={closeModal}
@@ -778,6 +779,53 @@ export default function MerchantList() {
                 : ""
             }
           />
+
+          {/* ✅ ADDED: NID / KYC Documents Viewing Area */}
+          <div className="py-4 border-t border-gray-100 mt-2 px-2">
+            <p className="text-gray-500 text-[13px] font-medium mb-3">
+              KYC Documents (NID / Passport)
+            </p>
+            <div className="grid grid-cols-2 gap-3">
+              {/* NID Front */}
+              {selected?.nidFront ? (
+                <a
+                  href={selected.nidFront}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center justify-center p-3 border border-gray-200 rounded hover:bg-gray-50 transition-colors group"
+                >
+                  <CreditCard className="w-6 h-6 text-teal-500 mb-2 group-hover:scale-110 transition-transform" />
+                  <span className="text-[12px] font-semibold text-gray-700">
+                    View Front ID
+                  </span>
+                </a>
+              ) : (
+                <div className="flex flex-col items-center justify-center p-3 border border-dashed border-gray-200 rounded bg-gray-50/50">
+                  <span className="text-[12px] text-gray-400">No Front ID</span>
+                </div>
+              )}
+
+              {/* NID Back */}
+              {selected?.nidBack ? (
+                <a
+                  href={selected.nidBack}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center justify-center p-3 border border-gray-200 rounded hover:bg-gray-50 transition-colors group"
+                >
+                  <CreditCard className="w-6 h-6 text-teal-500 mb-2 group-hover:scale-110 transition-transform" />
+                  <span className="text-[12px] font-semibold text-gray-700">
+                    View Back ID
+                  </span>
+                </a>
+              ) : (
+                <div className="flex flex-col items-center justify-center p-3 border border-dashed border-gray-200 rounded bg-gray-50/50">
+                  <span className="text-[12px] text-gray-400">No Back ID</span>
+                </div>
+              )}
+            </div>
+          </div>
+          {/* ────────────────────────────────────────── */}
         </div>
         <button
           style={{ padding: "5px" }}
