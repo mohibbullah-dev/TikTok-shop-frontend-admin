@@ -312,7 +312,6 @@ export default function MerchantList() {
           Manage all store accounts, funds, and permissions.
         </p>
       </div>
-
       {/* ── Filter Grid ── */}
       <div
         style={{ padding: "5px" }}
@@ -377,7 +376,6 @@ export default function MerchantList() {
           </button>
         </div>
       </div>
-
       {/* ── Table ── */}
       <div
         style={{ padding: "5px" }}
@@ -737,7 +735,6 @@ export default function MerchantList() {
           </div>
         </div>
       </div>
-
       {/* ════════ MODALS ════════ */}
       {/* 1. Detail Modal */}
       {/* 1. Detail Modal */}
@@ -835,7 +832,6 @@ export default function MerchantList() {
           Close Window
         </button>
       </Modal>
-
       {/* 2. Add/Deduct Funds Modal */}
       <Modal
         open={modal === "funds"}
@@ -896,7 +892,6 @@ export default function MerchantList() {
           </div>
         </div>
       </Modal>
-
       {/* 3. Manual Recharge Modal */}
       <Modal
         open={modal === "recharge"}
@@ -944,7 +939,6 @@ export default function MerchantList() {
           </div>
         </div>
       </Modal>
-
       {/* 4. Edit Merchant Modal */}
       <Modal
         open={modal === "edit"}
@@ -1009,7 +1003,6 @@ export default function MerchantList() {
           </div>
         </div>
       </Modal>
-
       {/* 5. Bank Card Modal */}
       <Modal
         open={modal === "bankcard"}
